@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TweetFlickr</title>
+    <!--[if lt IE 9]>
+    	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="stylesheets/app.css">
+  </head>
+  <body data-ng-app="TweetFlickr">
+    <div class="container">
+      <section role="application" data-ng-controller="SearchCtrl">    
+        <header>
+          <h1>TweetFlickr</h1> 
+          <form data-ng-submit="search(query)">
+            <input type="search" data-ng-model="query"> 
+            <input type="submit" value="Search">
+          </form>
+        </header>
+        
+        <section aria-live="polite" id="tweets">
+          <h2>Tweets</h2>
+          {{loadingTwitter}}
+          <div class="tweet"  data-ng-repeat="tweet in tweets">
+            <img data-ng-src="{{tweet.profile_image_url}}">
+            <h2>{{tweet.from_user_name}}</h2>
+            <p>{{tweet.text}}</p>
+            <p><a href="https://twitter.com/{{tweet.from_user}}/status/{{tweet.id}}">View on Twitter</a></p>
+
+          </div>
+        </section>
+
+        <section aria-live="polite" id="pics">
+          <h2>Images</h2>
+          {{looadingFlickr}}
+          <div data-ng-repeat="image in images">
+            <a ng-click="showFlickrObject = !showFlickrObject" data-ng-init="showFlickrObject=false">
+              <img data-ng-src="{{image.media.m}}">
+            </a>
+            <div data-ng-class="{dialog_open:showFlickrObject}"  data-ng-show="showFlickrObject">
+              <div class="box_wrapper">
+                <div class="box">
+                  <h3>{{image.title}}</h3>
+                  <p>Author: {{image.author}}</p>
+                  <img data-ng-src="{{image.media.m}}">
+                  <p><a href="{{image.link}}">View on Flickr</a></p>
+                  <button data-ng-click="showFlickrObject = !showFlickrObject">Close</button>
+                </div>
+              </div>
+
+            </div>
+
+            
+          </div>
+        </section>
+
+
+      </section> 
+      <footer>
+        <p>Made by <a href="http://twitter.com/bphogan">Brian Hogan</a> with Angular.js. Inspired by <a href="twazinga.heroku.com">Twazinga!</a></p>
+      </footer>
+    </div> 
+    <script src="javascripts/angular-1.0.6.js"></script>
+    <script src="javascripts/app.js"></script>
+  </body>
+</html>

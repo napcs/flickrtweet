@@ -1,0 +1,65 @@
+header, section, footer {
+  display: block; }
+
+input {
+  border: 1px solid #dddddd;
+  background-color: white; }
+
+body {
+  background-color: #dddddd;
+  color: #333333; }
+
+.container {
+  width: 960px;
+  margin: 0px auto;
+  background-color: white; }
+
+header {
+  margin: 1%;
+  width: 98%; }
+  header input[type=search] {
+    width: 64%; }
+
+#tweets, #pics {
+  float: left;
+  margin: 1%; }
+
+#tweets {
+  width: 64%; }
+
+#pics {
+  width: 32%;
+  text-align: center; }
+
+.tweet {
+  border: 1px solid #999999;
+  margin: 0 0 1em 0;
+  padding: 1em; }
+  .tweet img {
+    float: left;
+    margin: 0 0.5em 0 0; }
+  .tweet h2 {
+    margin-bottom: 0.5em; }
+  .tweet p {
+    margin: 0; }
+
+.dialog_open {
+  z-index: 40000; }
+  .dialog_open .box_wrapper {
+    position: fixed;
+    top: 25%;
+    left: 0;
+    width: 100%;
+    z-index: 40002; }
+  .dialog_open .box {
+    position: relative;
+    margin: 0 auto;
+    border: 1px solid #999999;
+    width: 500px;
+    height: 500px;
+    background-color: #dddddd; }
+
+footer {
+  clear: both;
+  text-align: center;
+  border-top: 1px solid #dddddd; }
