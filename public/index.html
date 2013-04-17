@@ -21,11 +21,11 @@
         
         <section aria-live="polite" id="tweets">
           <h2>Tweets</h2>
-          {{loadingTwitter}}
+          <div data-ng-bind="loadingTwitter"></div>
           <div class="tweet"  data-ng-repeat="tweet in tweets">
             <img data-ng-src="{{tweet.profile_image_url}}">
-            <h2>{{tweet.from_user_name}}</h2>
-            <p>{{tweet.text}}</p>
+            <h2 data-ng-bind="tweet.from_user_name"></h2>
+            <p data-ng-bind="tweet.text"></p>
             <p><a href="https://twitter.com/{{tweet.from_user}}/status/{{tweet.id}}">View on Twitter</a></p>
 
           </div>
@@ -33,7 +33,7 @@
 
         <section aria-live="polite" id="pics">
           <h2>Images</h2>
-          {{looadingFlickr}}
+          <div data-ng-bind="loadingFlickr"></div>
           <div data-ng-repeat="image in images">
             <a ng-click="showFlickrObject = !showFlickrObject" data-ng-init="showFlickrObject=false">
               <img data-ng-src="{{image.media.m}}">
@@ -41,8 +41,8 @@
             <div data-ng-class="{dialog_open:showFlickrObject}"  data-ng-show="showFlickrObject">
               <div class="box_wrapper">
                 <div class="box">
-                  <h3>{{image.title}}</h3>
-                  <p>Author: {{image.author}}</p>
+                  <h3 data-ng-bind="image.title"></h3>
+                  <p>Author: <span data-ng-bind="image.author"></span></p>
                   <img data-ng-src="{{image.media.m}}">
                   <p><a href="{{image.link}}">View on Flickr</a></p>
                   <button data-ng-click="showFlickrObject = !showFlickrObject">Close</button>
@@ -59,6 +59,7 @@
       </section> 
       <footer>
         <p>Made by <a href="http://twitter.com/bphogan">Brian Hogan</a> with Angular.js. Inspired by <a href="twazinga.heroku.com">Twazinga!</a></p>
+        <p>Code is on Github <a href="https://github.com/napcs/flickrtweet/">here</a>.</p>
       </footer>
     </div> 
     <script src="javascripts/angular-1.0.6.js"></script>
