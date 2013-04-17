@@ -1,4 +1,4 @@
-@app = angular.module("TweetFlickr", [])
+@app = angular.module("FlickrTweet", [])
 
 @SearchCtrl = ($scope, $http) ->
   $scope.query = "marathon"  

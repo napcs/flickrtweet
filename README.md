@@ -5,6 +5,8 @@ This is a simple app that searches the public Twitter and Flickr streams
 for keywords and displays the first results it finds. It's an experiment for
 me to learn how to do AngularJS development.
 
+You can see the live app at http://flickrtweet.bphogan.com
+
 Sharing this code to get ideas.
 
 This uses CoffeeScript and Sass, and doesn't have tests yet. I will rewrite

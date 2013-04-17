@@ -1,5 +1,5 @@
 (function() {
-  this.app = angular.module("TweetFlickr", []);
+  this.app = angular.module("FlickrTweet", []);
 
   this.SearchCtrl = function($scope, $http) {
     $scope.query = "marathon";
